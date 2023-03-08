@@ -51,7 +51,7 @@ class ProjectController extends Controller
         
         $newProject = new Project();
         
-        if($request->has('cover_image')){
+        if($request->hasFile('cover_image')){
             $path = Storage::disk('public')->put('project_image', $request->cover_image);
 
             $form_data['cover_image'] = $path;
@@ -104,7 +104,7 @@ class ProjectController extends Controller
 
         $form_data['slug'] = $slug;
 
-        if($request->has('cover_image')){
+        if($request->hasFile('cover_image')){
             if($project->cover_image){
                 Storage::delete($project->cover_image);
             }

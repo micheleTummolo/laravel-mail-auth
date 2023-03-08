@@ -28,7 +28,7 @@ class UpdateProjectRequest extends FormRequest
             'name'        => ['required', Rule::unique('projects')->ignore($this->project), 'max:150'],
             'description' => ['nullable'],
             'type_id'     => ['nullable', 'exists:types,id'],
-            'cover_image' => ['nullable', 'image', 'max:250']
+            'cover_image' => ['nullable', 'image']
         ];
     }
 
@@ -44,7 +44,6 @@ class UpdateProjectRequest extends FormRequest
             'name.unique' => 'E\' già presente un progetto con questo nome',
             'name.max' => 'Il nome non può essere lungo più di :max caratteri',
             'cover_image.image' => 'Inserire un formato di immagine valido',
-            'cover_image.max' => 'Path dell\'immagine non valido',
         ];
     }
 }

@@ -27,7 +27,7 @@ class StoreProjectRequest extends FormRequest
             'name'        => ['required', 'unique:projects', 'max:150'],
             'description' => ['nullable'],
             'type_id'     => ['nullable', 'exists:types,id'],
-            'cover_image' => ['nullable', 'image', 'max:250']
+            'cover_image' => ['nullable', 'image']
         ];
     }
 
@@ -44,7 +44,6 @@ class StoreProjectRequest extends FormRequest
             'name.max' => 'Il nome non può essere lungo più di :max caratteri',
             'type_id.exsists' => 'Tipo selezionato non valido',
             'cover_image.image' => 'Inserire un formato di immagine valido',
-            'cover_image.max' => 'Path dell\'immagine non valido',
         ];
     }
 }
