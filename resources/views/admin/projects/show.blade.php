@@ -9,6 +9,9 @@
                 </div>
                 <div>
                     <a class="btn btn-sm btn-primary" href="{{ route('admin.projects.index') }}" role="button">Elenco progetti</a>
+                    <a class="btn btn-sm btn-warning" href="{{ route('admin.projects.edit', $project->slug) }}" role="button" title="Modifica il progetto">
+                        <i class="fa-solid fa-edit"></i>
+                    </a>
                 </div>
             </div>
             <div class="col-12 mt-4 d-flex align-items-end">
