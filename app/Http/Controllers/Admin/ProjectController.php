@@ -8,6 +8,7 @@ use App\Models\Type;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -49,11 +50,19 @@ class ProjectController extends Controller
         $form_data['slug'] = $slug;
         
         $newProject = new Project();
+        
+        if($request->has('cover_image')){
+            $path = Storage::disk('public')->put('project_image', $request->cover_image);
+
+            $form_data['cover_image'] = $path;
+        }
+
         $newProject->fill($form_data);
 
         $newProject->save();
 
         return redirect()->route('admin.projects.index')->with('message', 'Progetto aggiunto correttamente');
+
     }
 
     /**

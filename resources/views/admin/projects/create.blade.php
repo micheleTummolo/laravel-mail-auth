@@ -18,7 +18,7 @@
         </div>
         @endif
         <div class="col-12 background_dark_2 border_radius_50 table_container">
-            <form action="{{ route('admin.projects.store') }}" method="POST" class="row g-3">
+            <form action="{{ route('admin.projects.store') }}" method="POST" class="row g-3" enctype="multipart/form-data">
                 @csrf
 
                 <div class="col-md-6">
@@ -33,6 +33,10 @@
                         <option value="{{ $type->id }}">{{ $type->type }}</option>
                         @endforeach
                     </select>
+                </div>
+                <div class="col-12">
+                    <label class="form-label text-white">Copertina</label>
+                    <input type="file" name="cover_image" id="cover_image" class="form-control @error('cover_image')is-invalid @enderror">
                 </div>
                 <div class="col-12">
                     <label class="form-label text-white">Descrizione</label>
