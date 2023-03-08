@@ -1,0 +1,26 @@
+header {
+
+    .header_container {
+        padding: 0 7rem;
+
+        .nav_logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+
+            &:hover {
+                color: #0A55C6;
+            }
+        }
+
+        .nav_icon {
+            color: white;
+            margin-left: 1rem;
+
+            &:hover {
+                color: #0A55C6;
+            }
+        }
+    }
+
+}

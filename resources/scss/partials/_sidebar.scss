@@ -1,0 +1,47 @@
+.logo_container {
+    width: 50%;
+    margin: 0 auto;
+
+    .logo_circle {
+        background-color: white;
+        border-radius: 50%;
+        width: 35%;
+        margin: 3rem 0;
+        padding: .3rem;
+
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+
+}
+
+.sidebar_link {
+    border-radius: 10px;
+    padding: .7rem 1rem;
+    width: 60%;
+
+    &:hover {
+        background-color: #313134;
+        cursor: pointer;
+    }
+}
+
+ul {
+    list-style: none;
+
+    .sidebar_selected {
+        background-color: #252527;
+    }
+}
+
+a {
+    font-size: 1.3rem;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.sidebar_bottom {
+    margin: 1.5rem 0 2rem 0;
+}
